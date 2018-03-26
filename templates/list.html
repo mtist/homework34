@@ -7,14 +7,18 @@
     {% for news in news_list %}
         <div class="col-5 col-md-4 col-lg-3 news">
             <div class="col-12 img">
-                <img src={{ news.img.url }} alt="aa">
+                <a href="{{ news.slug }}"><img src={{ news.img.url }} alt="{{ news.title }}"></a>
             </div>
             <div class="col-12 descript">
-                <h3>{{ news.title }}</h3>
+                <h3><a href="{{ news.slug }}"> {{ news.title }} </a></h3>
                 <p>{{ news.content }}</p>
             </div>
             <div class="col-12 tags">
-                <p>{{ news.tags }}</p>
+                <p>
+                    {% for tag in news.tags.all %}
+                        <a href="{{ tag.slug }}">{{ tag }}</a>
+                    {% endfor %}
+                </p>
             </div>
         </div>
     {% endfor %}

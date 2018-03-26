@@ -16,10 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from news import views
+from news.models import Article
 from django.conf.urls.static import static
 from homework34 import settings
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.NewsList.as_view(), name='list'),
+    path('', views.NewsList.as_view(), name='news_list'),
+    path('tags/', views.TagsList.as_view(), name='tags_list'),
+    path('<slug:Article>/', views.NewsDetail.as_view(), name='news_detail'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

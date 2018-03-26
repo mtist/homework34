@@ -17,7 +17,7 @@ class Article(models.Model):
     img = models.ImageField('Фото', default='.static/photo.png', blank=True)
     # content = RichTextUploadingField(default='')
     content = models.TextField('text')
-    tags = models.ForeignKey(Tags, on_delete=models.CASCADE)
+    tags = models.ManyToManyField(Tags)
 
     def __str__(self):
         return self.title

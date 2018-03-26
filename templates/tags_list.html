@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %} Tags {% endblock %}
+
+
+{% block content %}
+    <div class="row justify-content-md-center">
+        <div class="container-tags col-10 col-lg-8 ">
+            <span>
+                {% for tag in tags_list %}
+                    <a href="{{ tag.slug }}/">{{ tag }}</a> &nbsp;
+                {% endfor %}
+            </span>
+        </div>
+    </div>
+{% endblock %}
