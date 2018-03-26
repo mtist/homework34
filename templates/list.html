@@ -10,7 +10,7 @@
                 <a href="{{ news.slug }}"><img src={{ news.img.url }} alt="{{ news.title }}"></a>
             </div>
             <div class="col-12 descript">
-                <h3><a href="{{ news.slug }}"> {{ news.title }} </a></h3>
+                <h3><a href="{% url 'news_detail' news.slug %}"> {{ news.title }} </a></h3>
                 <p>{{ news.content }}</p>
             </div>
             <div class="col-12 tags">

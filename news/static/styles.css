@@ -156,3 +156,13 @@
     border-color: #0E2231;
     mso-border-shadow: yes;
 }
+
+.content-news {
+    color: #1c1c1c;
+    font-size: 16px;
+}
+
+.date-news {
+    color: #1c1c1c;
+    font-size: 10px;
+}

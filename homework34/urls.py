@@ -25,5 +25,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.NewsList.as_view(), name='news_list'),
     path('tags/', views.TagsList.as_view(), name='tags_list'),
-    path('<slug:Article>/', views.NewsDetail.as_view(), name='news_detail'),
+    path('detail/<slug:slug>/', views.NewsDetail.as_view(), name='news_detail'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

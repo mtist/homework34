@@ -24,8 +24,8 @@ class TagsList(ListView):
 class NewsDetail(DetailView):
     model = Article
     template_name = 'detail.html'
+    context_object_name = 'news'
 
-    def get_context_data(self, *args, **kwargs):
-        news_slug = self.get_slug_field()
-        news = Article.objects.get(slug=news_slug)
-        return {'news': news}
+    # def get_context_data(self, *args, **kwargs):
+    #     news_slug = self.get_slug_field()
+    #     return {'news': news}

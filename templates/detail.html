@@ -3,5 +3,13 @@
 {% block title %} {{ news.title }} {% endblock %}
 
 {% block content %}
-    <h1>{{ news.title }}</h1>
+    <div class="justify-content-md-center">
+        <div class="col-11">
+            <img src="{{ news.img.url }}" alt="">
+            <h1>{{ news.title }}</h1>
+            <span class="content-news">{{ news.content }}</span>
+            <p class="date-news">{{ news.date }}</p>
+        </div>
+    </div>
+
 {% endblock %}
