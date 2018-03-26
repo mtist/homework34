@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} News {% endblock %}
+
+{% block content %}
+    <div class="row justify-content-center">
+    {% for news in news_list %}
+        <div class="col-5 col-md-4 col-lg-3 news">
+            <div class="col-12 img">
+                <img src={{ news.img.url }} alt="aa">
+            </div>
+            <div class="col-12 descript">
+                <h3>{{ news.title }}</h3>
+                <p>{{ news.content }}</p>
+            </div>
+            <div class="col-12 tags">
+                <p>{{ news.tags }}</p>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
